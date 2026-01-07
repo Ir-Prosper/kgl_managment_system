@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Procurement - KGL Groceries LTD</title>
+
+    <!-- Link to your CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* Make hint text inside labels smaller */
+      .hint {
+        font-size: 11px;
+        color: gray;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ============================================================
+     TOP NAVIGATION BAR
+============================================================ -->
+    <nav class="top-nav">
+      <div class="nav-left">Produce Procurement</div>
+      <div class="nav-right">
+        <a href="manager-dashboard.html">Dashboard</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+     PROCUREMENT FORM
+============================================================ -->
+    <form id="procurement-form" class="grid-form">
+      <!-- Produce Name (NO HINT) -->
+      <div class="form-group">
+        <label>Produce Name:</label>
+        <input type="text" name="produceName" required />
+      </div>
+
+      <!-- Produce Type (HINT INSIDE LABEL) -->
+      <div class="form-group">
+        <label>
+          Type of Produce:
+          <span class="hint">(e.g. Fresh, Dry, Organic)</span>
+        </label>
+        <input type="text" name="produceType" required />
+      </div>
+
+      <!-- Date (NO HINT) -->
+      <div class="form-group">
+        <label>Date:</label>
+        <input type="date" name="date" required />
+      </div>
+
+      <!-- Time (NO HINT) -->
+      <div class="form-group">
+        <label>Time:</label>
+        <input type="time" name="time" required />
+      </div>
+
+      <!-- Tonnage (HINT INSIDE LABEL) -->
+      <div class="form-group">
+        <label>
+          Tonnage (kgs):
+          <span class="hint">(Enter quantity in kilograms)</span>
+        </label>
+        <input type="number" name="tonnage" required />
+      </div>
+
+      <!-- Cost (HINT INSIDE LABEL) -->
+      <div class="form-group">
+        <label>
+          Cost (UGX):
+          <span class="hint">(Total amount paid to supplier)</span>
+        </label>
+        <input type="number" name="cost" required />
+      </div>
+
+      <!-- Dealer Name (HINT INSIDE LABEL) -->
+      <div class="form-group">
+        <label>
+          Dealer Name:
+          <span class="hint">(Supplier or farmer name)</span>
+        </label>
+        <input type="text" name="dealerName" required />
+      </div>
+
+      <!-- Branch (NO HINT) -->
+      <div class="form-group">
+        <label>Branch:</label>
+        <select name="branch" required>
+          <option value="Maganjo">Maganjo</option>
+          <option value="Matugga">Matugga</option>
+        </select>
+      </div>
+
+      <!-- Contact (HINT INSIDE LABEL) -->
+      <div class="form-group">
+        <label>
+          Contact:
+          <span class="hint">(10 digits only, e.g. 0789123456)</span>
+        </label>
+        <input type="tel" name="contact" pattern="[0-9]{10}" required />
+      </div>
+
+      <!-- Sale Price (HINT INSIDE LABEL) -->
+      <div class="form-group">
+        <label>
+          Sale Price:
+          <span class="hint">(Price per kg for selling)</span>
+        </label>
+        <input type="number" name="salePrice" required />
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button type="submit">Submit Procurement</button>
+      </div>
+    </form>
+
+    <!-- Load procurement controller -->
+    <script src="js/procurement.js"></script>
+  </body>
+</html>

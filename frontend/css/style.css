@@ -1,0 +1,152 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 16px;
+  max-width: 1000px;
+  margin: auto;
+  background: #fafafa;
+}
+
+.login-logo img {
+  width: 35px;   /* adjust to the size you want */
+  height: auto;   /* keeps the proportions correct */
+  display: block;
+  margin: 0 auto; /* centers the logo */
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Grid layout for all forms */
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 14px;
+  background: #f9e1e1; /* perfect match for tomato */
+  padding: 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+/* Each field group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styling */
+label {
+  font-weight: bold;
+  margin-bottom: 1px;
+  color: #000000;
+  font-size: 14px;
+}
+
+/* Input and select styling */
+input,
+select {
+  padding: 8px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* Submit button row */
+.form-actions {
+  grid-column: span 3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: bold;
+  background: tomato;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #1bf451;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .grid-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    grid-column: span 1;
+  }
+}
+
+/* Navigation bar */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: tomato;
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+/* LEFT SIDE OF NAV: Title + Agent Name */
+.nav-left {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+/* Main title (Produce Selling) */
+.nav-left .main-title {
+  font-size: 18px; /* main title size */
+  font-weight: bold;
+}
+
+/* Agent name under title */
+.nav-left .agent-name {
+  font-size: 14px; /* 1px smaller than title */
+  color: #35353b; /* soft light color matching tomato background */
+  margin-top: 2px;
+  font-weight: normal;
+  font-weight: bold;
+}
+/* Agent name under navbar title (Credit Sales) */
+.agent-name {
+  font-size: 12px !important;
+  color: 35353b !important;
+  margin-top: 2px !important;
+  font-weight: bold !important;
+}
+
+.hint {
+  font-size: 12px; /* very small, subtle */
+  color: #706e6e; /* soft light gray */
+  font-weight: normal;
+  margin-left: 4px;
+  opacity: 1; /* softer look */
+}

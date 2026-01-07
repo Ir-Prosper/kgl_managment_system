@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Credit Sales - KGL Groceries LTD</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ============================================================
+     TOP NAVIGATION BAR
+============================================================ -->
+    <nav class="top-nav">
+      <div class="nav-left">
+        <div class="main-title">Credit Sales</div>
+        <div class="agent-name">Agent Name: <span id="navAgentName"></span></div>
+      </div>
+
+      <div class="nav-right">
+        <a href="agent-dashboard.html">Dashboard</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+     CREDIT SALES FORM
+     Hints added to all fields except date fields
+============================================================ -->
+    <form id="credit-form" class="grid-form">
+      <!-- Buyer Name -->
+      <div class="form-group">
+        <label>
+          Buyer Name:
+          <span class="hint">(Full name of the customer)</span>
+        </label>
+        <input type="text" name="creditBuyerName" required />
+      </div>
+
+      <!-- National ID -->
+      <div class="form-group">
+        <label>
+          National ID (NIN):
+          <span class="hint">(NIN : e.g. CM87012301AB12345)</span>
+        </label>
+        <input type="text" name="creditNIN" required />
+      </div>
+
+      <!-- Location -->
+      <div class="form-group">
+        <label>
+          Location:
+          <span class="hint">(Village, town, or area)</span>
+        </label>
+        <input type="text" name="creditLocation" required />
+      </div>
+
+      <!-- Contact -->
+      <div class="form-group">
+        <label>
+          Contact:
+          <span class="hint">(10-digit phone number)</span>
+        </label>
+        <input type="tel" name="creditContact" pattern="[0-9]{10}" required />
+      </div>
+
+      <!-- Amount Due -->
+      <div class="form-group">
+        <label>
+          Amount Due (UGX):
+          <span class="hint">(Total credit amount)</span>
+        </label>
+        <input type="number" name="creditAmountDue" required />
+      </div>
+
+      <!-- Hidden Sales Agent (auto-filled by JS) -->
+      <input type="hidden" name="creditSalesAgent" id="creditSalesAgentHidden" />
+
+      <!-- Due Date (NO hint) -->
+      <div class="form-group">
+        <label>Due Date:</label>
+        <input type="date" name="creditDueDate" required />
+      </div>
+
+      <!-- Produce Name -->
+      <div class="form-group">
+        <label>
+          Produce Name:
+          <span class="hint">(e.g. Maize, Beans, Tomatoes)</span>
+        </label>
+        <input type="text" name="creditProduceName" required />
+      </div>
+
+      <!-- Produce Type -->
+      <div class="form-group">
+        <label>
+          Type of Produce:
+          <span class="hint">(Dry, fresh, sorted, etc.)</span>
+        </label>
+        <input type="text" name="creditProduceType" required />
+      </div>
+
+      <!-- Tonnage -->
+      <div class="form-group">
+        <label>
+          Tonnage (kgs):
+          <span class="hint">(Enter quantity in kilograms)</span>
+        </label>
+        <input type="number" name="creditTonnage" required />
+      </div>
+
+      <!-- Dispatch Date (NO hint) -->
+      <div class="form-group">
+        <label>Dispatch Date:</label>
+        <input type="date" name="creditDispatchDate" required />
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button type="submit">Submit Credit Sale</button>
+      </div>
+    </form>
+
+    <!-- ============================================================
+     CREDIT SALES JS CONTROLLER
+============================================================ -->
+    <script src="js/credit-sales.js"></script>
+  </body>
+</html>

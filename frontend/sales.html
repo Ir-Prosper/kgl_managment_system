@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Page Title -->
+    <title>Sales - KGL Groceries LTD</title>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ============================================================
+         TOP NAVIGATION BAR
+         Shows page title + logged-in agent name + dashboard + logout
+    =============================================================== -->
+    <nav class="top-nav">
+      <!-- Left side: Page title + Agent name -->
+      <div class="nav-left">
+        <!-- Main page title -->
+        <div class="main-title">Produce Selling</div>
+
+        <!-- Logged-in agent name (filled by sales.js) -->
+        <div class="agent-name">Agent Name: <span id="navAgentName"></span></div>
+      </div>
+
+      <!-- Right side: Navigation links -->
+      <div class="nav-right">
+        <a href="agent-dashboard.html">Dashboard</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+         SALES FORM
+         Agent records a produce sale here.
+         Agent name is hidden (auto-filled by JS).
+         Hints are shown for all fields except Date and Time.
+    =============================================================== -->
+    <form id="selling-form" class="grid-form">
+      <!-- Produce Name + hint -->
+      <div class="form-group">
+        <label>
+          Produce Name:
+          <span class="hint">(e.g. Tomatoes, Maize, Beans)</span>
+        </label>
+        <input type="text" name="sellProduceName" required />
+      </div>
+
+      <!-- Tonnage + hint -->
+      <div class="form-group">
+        <label>
+          Tonnage (kgs):
+          <span class="hint">(Enter quantity in kilograms)</span>
+        </label>
+        <input type="number" name="sellTonnage" required />
+      </div>
+
+      <!-- Amount Paid + hint -->
+      <div class="form-group">
+        <label>
+          Amount Paid (UGX):
+          <span class="hint">(Total amount received from buyer)</span>
+        </label>
+        <input type="number" name="amountPaid" required />
+      </div>
+
+      <!-- Buyer Name + hint -->
+      <div class="form-group">
+        <label>
+          Buyer Name:
+          <span class="hint">(Name of the customer buying produce)</span>
+        </label>
+        <input type="text" name="buyerName" required />
+      </div>
+
+      <!-- Hidden input: backend receives the correct agent name -->
+      <input type="hidden" name="salesAgent" id="salesAgentHidden" />
+
+      <!-- Date (no hint) -->
+      <div class="form-group">
+        <label>Date:</label>
+        <input type="date" name="sellDate" required />
+      </div>
+
+      <!-- Time (no hint) -->
+      <div class="form-group">
+        <label>Time:</label>
+        <input type="time" name="sellTime" required />
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button type="submit">Submit Sale</button>
+      </div>
+    </form>
+
+    <!-- ============================================================
+         SALES.JS CONTROLLER
+         Handles login check, auto-filling agent name, and form submit
+    =============================================================== -->
+    <script src="js/sales.js"></script>
+  </body>
+</html>
